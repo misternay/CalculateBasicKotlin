@@ -1,24 +1,75 @@
 package com.zerosx.hellox
 
-import kotlin.concurrent.timerTask
-
+//###################Variable####################
+var type=""
+var a=""
+var b=""
+var resu:Double=0.0
+//###############################################
+//################MAIN PROCESS####################
 fun main(args: Array<String>) {
     println("Please Input 1st number Examle 5.0")
-    var a: String = readLine().toString()
+    checknumOfA()
     println("Please Input + - * / ")
-    var checkx = 1
-    var i = 1
-    var type = ""
+    checkoper()
+    println("Please Input 2nd number Examle 5.0")
+    checknumOfB()
+    operan()
+    println("Answer = ${resu}")
+}
+//###############################################
+//################FUNC PROCESS###################
+fun crossx(a: Double, b: Double) {
+     resu = a * b;
+}
+
+fun passx(a: Double, b: Double) {
+     resu = a + b;
+}
+
+fun minusx(a: Double, b: Double) {
+     resu = a - b;
+}
+
+fun divied(a: Double, b: Double) {
+     resu = a / b;
+}
+fun checkoper(){
+    var i=1
     do {
-        type = readLine().toString()
+         type = readLine().toString()
         if (type != "+" && type != "-" && type != "*" && type != "/") {
             println("Error please write + - * /")
         } else {
             i--
         }
     } while (i > 0)
-    println("Please Input 2nd number Examle 5.0")
-    var b: String = readLine().toString()
+}
+fun checknumOfA(){
+    var i=1
+    do {
+         a = readLine().toString()
+        try {
+            a.toDouble()
+            i--
+        } catch (e:NumberFormatException) {
+            println("Error please write number again")
+        }
+    } while (i > 0)
+}
+fun checknumOfB(){
+    var i=1
+    do {
+        b = readLine().toString()
+        try {
+            b.toDouble()
+            i--
+        } catch (e:NumberFormatException) {
+            println("Error please write number again")
+        }
+    } while (i > 0)
+}
+fun operan(){
     if (type == "+") {
         passx(a.toDouble(), b.toDouble())
     } else if (type == "-") {
@@ -28,24 +79,4 @@ fun main(args: Array<String>) {
     } else if (type == "/") {
         divied(a.toDouble(), b.toDouble())
     }
-}
-
-fun crossx(a: Double, b: Double) {
-    var resu = a * b;
-    println(resu)
-}
-
-fun passx(a: Double, b: Double) {
-    var resu = a + b;
-    println(resu)
-}
-
-fun minusx(a: Double, b: Double) {
-    var resu = a - b;
-    println(resu)
-}
-
-fun divied(a: Double, b: Double) {
-    var resu = a / b;
-    println(resu)
 }
