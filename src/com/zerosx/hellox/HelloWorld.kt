@@ -13,19 +13,19 @@ fun main(args: Array<String>) {
 //###############################################
 //################FUNC PROCESS###################
 fun crossx(a: Double, b: Double) {
-     resu = a * b;
+     resu = a * b
 }
 
 fun passx(a: Double, b: Double) {
-     resu = a + b;
+     resu = a + b
 }
 
 fun minusx(a: Double, b: Double) {
-     resu = a - b;
+     resu = a - b
 }
 
 fun divied(a: Double, b: Double) {
-     resu = a / b;
+     resu = a / b
 }
 fun checkoper(){
     var i=1
